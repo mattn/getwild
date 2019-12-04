@@ -10,7 +10,7 @@ func init() {
 }
 
 func getwild(args []string) []string {
-	result := make([]string, len(args))
+	result := make([]string, 0, len(args))
 	for _, arg := range args {
 		match, err := filepath.Glob(arg)
 		if err == nil && len(match) > 0 {
@@ -18,6 +18,9 @@ func getwild(args []string) []string {
 		} else {
 			result = append(result, arg)
 		}
+	}
+	for _, a := range result {
+		println("[" + a + "]")
 	}
 	return result
 }
