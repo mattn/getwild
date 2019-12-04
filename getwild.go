@@ -19,8 +19,5 @@ func getwild(args []string) []string {
 			result = append(result, arg)
 		}
 	}
-	for _, a := range result {
-		println("[" + a + "]")
-	}
 	return result
 }
