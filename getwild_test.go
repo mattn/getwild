@@ -18,6 +18,10 @@ func TestSimple(t *testing.T) {
 			input: []string{"cmd", "-z", "*test*", "-y"},
 			want:  []string{"cmd", "-z", "getwild_test.go", "-y"},
 		},
+		{
+			input: []string{"cmd", "-z", "*getwild-and-chance*", "-y"},
+			want:  []string{"cmd", "-z", "*getwild-and-chance*", "-y"},
+		},
 	}
 
 	for _, test := range tests {
