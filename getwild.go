@@ -3,10 +3,13 @@ package getwild
 import (
 	"os"
 	"path/filepath"
+	"runtime"
 )
 
 func init() {
-	os.Args = getwild(os.Args)
+	if runtime.GOOS == "windows" {
+		os.Args = getwild(os.Args)
+	}
 }
 
 func getwild(args []string) []string {
